@@ -1,0 +1,13 @@
+node_modules
+build
+*.log
+
+# lock files
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# tree-sitter generated folders
+src
+binding.gyp
+index.js

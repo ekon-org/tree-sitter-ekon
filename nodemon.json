@@ -1,0 +1,6 @@
+{
+  "watch": ["grammar.js", "test/corpus/*.txt"],
+  "exec": "pnpm build && pnpm test",
+  "ext": "js,txt",
+  "ignore": ["src/**/*"]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "tree-sitter-ekon",
+  "version": "0.0.1",
+  "description": "A EKON grammar from tree-sitter",
+  "main": "index.js",
+  "scripts": {
+    "gyp": "node-gyp build",
+    "build": "tree-sitter generate",
+    "start": "nodemon",
+    "test": "tree-sitter test"
+  },
+  "keywords": [
+    "EKON",
+    "json-alternative",
+    "markup-lang"
+  ],
+  "author": "Himujjal",
+  "license": "ISC",
+  "dependencies": {
+    "nan": "^2.14.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "tree-sitter-cli": "^0.18.0"
+  }
+}
