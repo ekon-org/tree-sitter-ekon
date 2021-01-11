@@ -2,14 +2,11 @@
 Root object
 ==================
 
-//  
-
 hello: 1
 
 ----
 
 (document
-  (comment)
   (rootObject 
       (pair (string (identifier_string)) (number))
   )

@@ -2,6 +2,8 @@
 
 EKON grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter)
 
+[Ekon website](https://github.com/Himujjal/ekon)
+
 # Get started
 
 

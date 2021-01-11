@@ -10,7 +10,7 @@ module.exports = grammar({
 
     _value: ($) =>
       choice(
-        $.comment,
+        // $.comment,
         $.object,
         $.array,
         $.number,
@@ -21,7 +21,8 @@ module.exports = grammar({
       ),
 
     rootObject: ($) => seq(commaSep1($.pair)),
-    comment: () => token(/\/\/.*\n/),
+
+    // comment: () => token(/\/\/.*\n/),
 
     object: ($) => seq("{", commaSep($.pair), optional(","), "}"),
 
