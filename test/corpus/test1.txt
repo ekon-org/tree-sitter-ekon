@@ -7,8 +7,8 @@ hello: 1
 ----
 
 (document
-  (rootObject 
-      (pair (string (identifier_string)) (number))
+  (object 
+      (pair (string) (number))
   )
 )
 
@@ -29,7 +29,7 @@ Arrays
   {
     hello: world
     this: ^1201
-    "yo": 1
+    "yo": +1e12
     'hey': 'jude'
   },
 ]
@@ -45,10 +45,10 @@ Arrays
     (true)
     (false)
     (object
-      (pair (string (identifier_string)) (string (identifier_string)))
-      (pair (string (identifier_string)) (string (identifier_string)))
-      (pair (string (string_content)) (number))
-      (pair (string (string_content)) (string (string_content)))
+      (pair (string) (string))
+      (pair (string) (string))
+      (pair (string) (number))
+      (pair (string) (string))
     )
   )
 )
@@ -58,7 +58,10 @@ String content
 =====================
 
 [
-  '' 
+  'multi
+  line
+  string
+  ' 
   'abc',
   hello
   'def\n',
@@ -70,24 +73,31 @@ String content
 ----
 
 (document
-  (array
-    (string)
-    (string (string_content))
-    (string (identifier_string))
-    (string (string_content (escape_sequence)))
-    (string (string_content (escape_sequence)))
-    (string (string_content (escape_sequence)))
-    (string (string_content (escape_sequence)))))
+  (array (string) (string) (string) (string) (string) (string) (string))
+)
 
 ================================
-Top-level numbers
+numbers
 ================================
-
--1
+[
+  -1
+  -1_12_1233_11.1222_21e-133_133
+  001
+  0b11
+  {
+    1: 01
+  }
+]
 
 ---
 
-(document (number))
+(document (array
+  (number)
+  (number)
+  (string)
+  (number)
+  (object (pair (string) (string)))
+))
 
 ================================
 Top-level null
@@ -98,3 +108,65 @@ null
 ---
 
 (document (null))
+
+===============================
+Top-level object
+===============================
+{
+  hello: 1
+}
+
+-----
+(document (object (pair (string) (number))))
+
+===============================
+comments
+===============================
+
+// hello
+{
+  hello
+  // there is a comment here
+  :
+  // also
+  1,
+  yo: [ // here
+  // hey
+  1,
+  hello,
+  there,
+  github.com/Himujjal
+  ]
+}
+// hello there
+
+-----
+
+(document
+  (comment)
+  (object
+    (pair (string) (comment) (comment) (number))
+    (pair
+      (string)
+      (array
+        (comment) (comment) (number) (string) (string) (string)
+      )
+    )
+  )
+  (comment)
+)
+
+
+============================
+schema
+============================
+`
+this is a schema
+`
+hello: -1_1.0_1e-1_2
+
+------
+(document
+  (schema)
+  (object (pair (string) (number)))
+)
