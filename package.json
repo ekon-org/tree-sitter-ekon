@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-ekon",
-  "version": "0.0.1",
-  "description": "A EKON grammar from tree-sitter",
+  "version": "1.0.0",
+  "description": "EKON grammar for tree-sitter",
   "main": "index.js",
   "scripts": {
     "gyp": "node-gyp build",
@@ -10,12 +10,13 @@
     "test": "tree-sitter test"
   },
   "keywords": [
-    "EKON",
+    "ekon",
     "json-alternative",
-    "markup-lang"
+    "markup-lang",
+    "parser"
   ],
-  "author": "Himujjal",
-  "license": "ISC",
+  "author": "Himujjal Upadhyaya (Himu)",
+  "license": "MIT",
   "dependencies": {
     "nan": "^2.14.2"
   },
