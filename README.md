@@ -42,11 +42,6 @@ to know how to write tests
 
 _Highlighting tests_:
 
-### ROADMAP
-
-- [ ] Comments support
-- [ ] Atom package support
-- [ ] nvim-tree-sitter support
 
 ### Contribution
 
